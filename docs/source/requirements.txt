@@ -1,0 +1,12 @@
+nbsphinx==0.9.7
+Sphinx==8.1.3
+#sphinx-autobuild==2024.10.3
+#sphinx-markdown-tables==0.0.17
+sphinx-rtd-theme==3.0.2
+#sphinxcontrib-applehelp==2.0.0
+#sphinxcontrib-devhelp==2.0.0
+#sphinxcontrib-htmlhelp==2.1.0
+#sphinxcontrib-jquery==4.1
+#sphinxcontrib-jsmath==1.0.1
+#sphinxcontrib-qthelp==2.0.0
+#sphinxcontrib-serializinghtmlp==2.0.0
