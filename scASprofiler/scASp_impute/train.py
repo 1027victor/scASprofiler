@@ -218,11 +218,6 @@ def train(
 
             mse = float(((fill - df_raw) ** 2)[idx].mean())
 
-            fake = generator.decoder(z_fixed, lbls_oh)  # (n_cells,1,H,W)
-            fill = fake.detach().cpu().numpy().reshape(df_raw.shape)
-            idx = masks.obs_mask & (~masks.val_mask)
-            mse = float(((fill - df_raw) ** 2)[idx].mean())
-
         min_delta = 1e-4
         if np.isfinite(mse) and mse < (best_mse - min_delta):
             best_mse = mse
