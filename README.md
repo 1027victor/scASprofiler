@@ -6,6 +6,7 @@
 ![Stars](https://img.shields.io/github/stars/1027victor/scASprofiler.svg)
 ![Forks](https://img.shields.io/github/forks/1027victor/scASprofiler.svg)
 ![Contributors](https://img.shields.io/github/contributors/1027victor/scASprofiler.svg)
+
 scASprofiler: Profiling Single-cell RNA Splicing with A Deep Convolutional Generative Network
 
 Full documentation and tutorials are available at [DOLPHIN Docs](https://dolphin-sc.readthedocs.io/en/latest/).
