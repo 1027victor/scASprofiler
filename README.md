@@ -27,7 +27,6 @@ Installing scASprofiler directly from GitHub ensures you have the latest version
 
 ---
 
-### 💻 Option 1: Linux Installation (Recommended)
 📥 Step 1: Clone the Repository
 ```bash
 git clone https://github.com/1027victor/scASprofiler.git
