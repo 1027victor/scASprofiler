@@ -1,0 +1,150 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>scASprofiler-impute CLI &mdash; scASprofiler 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=01f34227"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="scASprofiler-quantify CLI" href="scASprofiler-quantify.html" />
+    <link rel="prev" title="scASprofiler-perp CLI" href="scASprofiler-perp.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            scASprofiler
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Main</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scASprofiler-perp.html">scASprofiler-perp CLI</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">scASprofiler-impute CLI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scASprofiler-quantify.html">scASprofiler-quantify CLI</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">scASprofiler</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">scASprofiler-impute CLI</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/scASprofiler-impute.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="scasprofiler-impute-cli">
+<h1>scASprofiler-impute CLI<a class="headerlink" href="#scasprofiler-impute-cli" title="Link to this heading"></a></h1>
+<p>The scASprofiler-impute CLI implements a VAE-GAN framework for imputing highly sparse single-cell alternative splicing (AS) / junction count matrices.
+This command supports two modes: training and imputation. In training mode, scASprofiler learns a conditional generative model that captures cluster-specific
+splicing distributions, where each cell is associated with a discrete label (cluster / cell type). In imputation mode, it uses the trained decoder to generate
+in silico splicing profiles and then performs weighted KNN-style imputation (median over nearest synthetic neighbors) to fill in missing entries, while preserving observed values.</p>
+<p>you can generate a complete single-cell splice junction counts matrix  by the command line like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scASprofiler-impute<span class="w">  </span>train<span class="w">   </span>--data-Sj<span class="w"> </span>/out/filter_sj_counts.csv<span class="w">   </span>--data-c<span class="w"> </span>onlyfillna_as_PRJEB15062_smart_seq2_label.txt<span class="w">   </span>--outdir<span class="w"> </span>./<span class="w">  </span>--clusters<span class="w"> </span><span class="m">2</span><span class="w">   </span>--n-epochs<span class="w"> </span><span class="m">1000</span><span class="w"> </span>--batch-size<span class="w"> </span><span class="m">8</span><span class="w">   </span>--drop-prob<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span>--patience<span class="w"> </span><span class="m">10</span><span class="w">   </span>--overwrite<span class="w">   </span>--run-impute<span class="w">   </span>--name<span class="w"> </span>scasp_drop_0.1<span class="w">   </span>-k<span class="w"> </span><span class="m">10</span>
+</pre></div>
+</div>
+<p>By default, you will have one output file in the outdir,the output file contains all information for quantify, for
+<cite>scASprofiler-quantify</cite>.</p>
+<section id="options">
+<h2>Options<a class="headerlink" href="#options" title="Link to this heading"></a></h2>
+<p>There are more parameters for setting (<code class="docutils literal notranslate"><span class="pre">scASprofiler-impute</span> <span class="pre">train</span> <span class="pre">--help</span></code> always give the version
+you are using):</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>parameter settings
+
+Options:
+    data_sj: path to the splicing junction matrix file (feature × cell; missing values as NaN), used as the model input for training/imputation.
+    data_c: path to the cell label/cluster file (one label per cell, aligned to the columns of the SJ matrix), used for conditional generation.
+    outdir: output directory for saving checkpoints and imputed results.
+    name: user-defined job name used to prefix output files; if empty, a name is derived from input filenames.
+    n_epochs: number of training epochs.
+    batch_size: mini-batch size used during training.
+    drop_prob: fraction of observed entries randomly masked to build a pseudo-validation set for early stopping and model selection.
+    patience: early-stopping patience; training stops if validation MSE does not improve for this many epochs.
+    threthold: convergence threshold parameter (reserved for convergence control; may be used to judge training stabilization depending on implementation).
+    channels: number of input channels for the reshaped SJ “image” (typically 1 for a single matrix).
+    latent_dim: dimensionality of the latent space in the VAE encoder/decoder.
+    clusters: number of clusters/classes in the label file (one-hot conditioning dimension).
+    overwrite: whether to overwrite existing checkpoints with the same job configuration.
+    run_impute: whether to run imputation immediately after training finishes.
+    no_run_impute: disable automatic post-training imputation.
+    sim_size: number of synthetic samples generated per cluster during imputation (larger gives smoother KNN statistics but costs more time/memory).
+    k: number of nearest synthetic neighbors used in mask-aware KNN imputation.
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="scASprofiler-perp.html" class="btn btn-neutral float-left" title="scASprofiler-perp CLI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="scASprofiler-quantify.html" class="btn btn-neutral float-right" title="scASprofiler-quantify CLI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, hpw.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
