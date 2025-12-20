@@ -3,7 +3,7 @@ import os
 import pandas as pd
 
 
-def calculate_as_rate(sj_fill):
+def calculate_as_ratio(sj_fill):
     """
     Calculate AS rate by group.
 
@@ -45,7 +45,7 @@ def main(input_file, output_dir):
     os.makedirs(output_dir, exist_ok=True)
 
     sj_fill = pd.read_csv(input_file, index_col=0)
-    as_rate = calculate_as_rate(sj_fill)
+    as_rate = calculate_as_ratio(sj_fill)
 
     output_file = os.path.join(output_dir, "as_ratio.csv")
     as_rate.to_csv(output_file)
