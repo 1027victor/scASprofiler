@@ -188,8 +188,3 @@ def impute_cmd(
 
 if __name__ == "__main__":
     cli()
-
-
-
-
-# python -m scASp_impute.cli train   --file-d /home/hpw/tools/PRJEB15062_smart_seq2/NA_norm_PRJEB15062_smart_seq2.csv   --file-c /home/hpw/tools/PRJEB15062_smart_seq2/onlyfillna_as_PRJEB15062_smart_seq2_label.txt   --outdir ./   --img-size 109 --ncls 2   --n-epochs 1000 --batch-size 8   --drop-prob 0.1 --patience 10   --overwrite   --run-impute   --job-name scasp_drop_0.1   --knn-k 10
