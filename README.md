@@ -1,5 +1,5 @@
 # scASprofiler
-[![source](https://img.shields.io/badge/Source_code-support-blue.svg)](https://github.com//1027victor/scASprofiler/tree/main/R)
+[![source](https://img.shields.io/badge/Source_code-support-blue.svg)](https://github.com//1027victor/scASprofiler/tree/main/scASprofiler)
 ![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)
 ![License](https://img.shields.io/github/license/1027victor/scASprofiler.svg)
 ![Languages](https://img.shields.io/github/languages/top/1027victor/scASprofiler.svg)
