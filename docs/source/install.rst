@@ -29,4 +29,4 @@ Test
 In order to test the installation, you could type ``scASprofiler-perp, scASprofiler-impute, scASprofiler-quantify``. 
 If you have any issues, please report them to the issue on `scASprofiler issues`_.
 
-.. _scASprofiler issues: https://github.com/1027victor/scASprofiler/issue
+.. _scASprofiler issues: https://github.com/1027victor/scASprofiler/issues
