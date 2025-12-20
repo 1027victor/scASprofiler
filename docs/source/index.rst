@@ -31,7 +31,7 @@ Quick Resources
   https://github.com/1027victor/scASprofiler
   
 * **Issue reports:**
-  https://github.com/1027victor/scASprofiler/issue
+  https://github.com/1027victor/scASprofiler/issues
 
 
 
