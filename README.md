@@ -1,11 +1,11 @@
 # scASprofiler
-[![source](https://img.shields.io/badge/Source_code-support-blue.svg)](https://github.com//1027victor/ScSpliceShiner/tree/main/R)
+[![source](https://img.shields.io/badge/Source_code-support-blue.svg)](https://github.com//1027victor/scASprofiler/tree/main/R)
 ![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)
-![License](https://img.shields.io/github/license/1027victor/ScSpliceShiner.svg)
-![Languages](https://img.shields.io/github/languages/top/1027victor/ScSpliceShiner.svg)
-![Stars](https://img.shields.io/github/stars/1027victor/ScSpliceShiner.svg)
-![Forks](https://img.shields.io/github/forks/1027victor/ScSpliceShiner.svg)
-![Contributors](https://img.shields.io/github/contributors/1027victor/ScSpliceShiner.svg)
+![License](https://img.shields.io/github/license/1027victor/scASprofiler.svg)
+![Languages](https://img.shields.io/github/languages/top/1027victor/scASprofiler.svg)
+![Stars](https://img.shields.io/github/stars/1027victor/scASprofiler.svg)
+![Forks](https://img.shields.io/github/forks/1027victor/scASprofiler.svg)
+![Contributors](https://img.shields.io/github/contributors/1027victor/scASprofiler.svg)
 scASprofiler: Profiling Single-cell RNA Splicing with A Deep Convolutional Generative Network
 
 Full documentation and tutorials are available at [DOLPHIN Docs](https://dolphin-sc.readthedocs.io/en/latest/).
