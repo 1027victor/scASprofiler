@@ -33,7 +33,7 @@ def build_row_merged_out_tab(sj_files: List[str], out_path: str) -> str:
     merged = merged.drop_duplicates(["chromosome", "start", "end", "strand"])
     merged = merged.sort_values(["chromosome", "start", "end"])
     merged = merged[["chromosome","start","end","strand","intron_motif","annotated","total_unique_mapping","total_multi_mapping","max_overhang"]]
-    merged.to_csv(out_path, sep="\t", header=False, index=False)
+    # merged.to_csv(out_path, sep="\t", header=False, index=False)
     return out_path
 
 def build_junction_by_sample_matrix(
