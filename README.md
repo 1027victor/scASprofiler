@@ -9,7 +9,7 @@
 
 scASprofiler: Profiling Single-cell RNA Splicing with A Deep Convolutional Generative Network
 
-Full documentation and tutorials are available at [DOLPHIN Docs](https://dolphin-sc.readthedocs.io/en/latest/).
+Full documentation and tutorials are available at [scASprofiler Docs](https://scASprofiler.readthedocs.io/en/latest/).
 
 <img title="DOLPHIN Logo" alt="Alt text" src="DOLPHIN_logo.png">
 
