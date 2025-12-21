@@ -30,19 +30,35 @@ you are using):
 
     Options:
         data_sj: path to the splicing junction matrix file (feature × cell; missing values as NaN), used as the model input for training/imputation.
+
         data_c: path to the cell label/cluster file (one label per cell, aligned to the columns of the SJ matrix), used for conditional generation.
+
         outdir: output directory for saving checkpoints and imputed results.
+
         name: user-defined job name used to prefix output files; if empty, a name is derived from input filenames.
+
         n_epochs: number of training epochs.
+
         batch_size: mini-batch size used during training.
+
         drop_prob: fraction of observed entries randomly masked to build a pseudo-validation set for early stopping and model selection.
+
         patience: early-stopping patience; training stops if validation MSE does not improve for this many epochs.
+
         threthold: convergence threshold parameter (reserved for convergence control; may be used to judge training stabilization depending on implementation).
+
         channels: number of input channels for the reshaped SJ “image” (typically 1 for a single matrix).
+
         latent_dim: dimensionality of the latent space in the VAE encoder/decoder.
+
         clusters: number of clusters/classes in the label file (one-hot conditioning dimension).
+
         overwrite: whether to overwrite existing checkpoints with the same job configuration.
+
         run_impute: whether to run imputation immediately after training finishes.
+
         no_run_impute: disable automatic post-training imputation.
+
         sim_size: number of synthetic samples generated per cluster during imputation (larger gives smoother KNN statistics but costs more time/memory).
+
         k: number of nearest synthetic neighbors used in mask-aware KNN imputation.
