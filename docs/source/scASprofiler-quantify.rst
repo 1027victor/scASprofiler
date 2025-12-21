@@ -24,4 +24,5 @@ you are using):
 
     Options:
         input-file: Input CSV file containing splice junction data
+
         outdir: Output directory to save results
