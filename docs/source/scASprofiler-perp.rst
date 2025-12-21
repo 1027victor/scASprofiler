@@ -53,5 +53,5 @@ you are using):
         filter_unique_gene: whether to keep only junctions uniquely assigned to a single gene (reduces cross-gene ambiguity).
         keep_multi_gene: whether to retain junctions that map to multiple genes (less strict; may include ambiguous loci).
         use_multi: whether to include multi-mapped reads/junction counts if present in the input matrix (behavior depends on how the upstream counts were generated).
-        plate: pipeline switch; whether to use the plate-based workflow (mart-seq2).
+        plate: pipeline switch; whether to use the plate-based workflow (smart-seq2).
         x10: alias for the 10x (droplet-based) pipeline; if enabled, overrides the plate/tenx selection.
