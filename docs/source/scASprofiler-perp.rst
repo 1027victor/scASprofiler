@@ -42,16 +42,29 @@ you are using):
 
     Options:
         sj_dir: directory of STAR splicing junction files (e.g., SJ.out.tab); used as the input junction table for filtering and grouping.
+
         gtf: GTF annotation file path.
+
         outdir: output directory for all generated results.
+
         samples_ps: group-wise thresholding parameter; minimum number of observed (non-NaN) cells per junction within an intron group—junctions below this are set to missing (NaN).
+
         sites_ps: group-wise thresholding parameter; minimum total counts per cell within an intron group—cells below this are set to missing (NaN) within that group.
+
         sites_thres: site-level QC threshold; minimum number of expressing cells per junction (row-wise non-NaN count) to retain a junction.
+
         samples_thres: cell-level QC threshold; minimum number of expressing junctions per cell (column-wise non-NaN count) to retain a cell.
+
         use_ray: whether to enable Ray parallelism for group-wise threshold filtering (useful for large datasets).
+
         num_cpus: number of CPUs to allocate for Ray-based parallel computation.
+
         filter_unique_gene: whether to keep only junctions uniquely assigned to a single gene (reduces cross-gene ambiguity).
+
         keep_multi_gene: whether to retain junctions that map to multiple genes (less strict; may include ambiguous loci).
+
         use_multi: whether to include multi-mapped reads/junction counts if present in the input matrix (behavior depends on how the upstream counts were generated).
+
         plate: pipeline switch; whether to use the plate-based workflow (smart-seq2).
+
         x10: alias for the 10x (droplet-based) pipeline; if enabled, overrides the plate/tenx selection.
