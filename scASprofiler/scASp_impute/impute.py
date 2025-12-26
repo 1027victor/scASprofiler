@@ -9,7 +9,7 @@ import torch
 from .config import IOConfig, ImputeConfig, ModelConfig
 from .data_loader import load_labels
 from .utils import load_and_preprocess_data
-from .knn import my_knn_type
+from .knn import knn_observed
 from .models import Decoder
 from .utils import build_job_name, build_model_basename, infer_device, one_hot, denorm_sj
 
@@ -77,7 +77,7 @@ def impute(
         data_k = data_mat[:, j]
         mask_k = mask_mat[:, j]
         sim_k = sim_out[int(labels[j])]
-        imputed[:, j] = my_knn_type(
+        imputed[:, j] = knn_observed(
             data_k, mask_k, sim_k, knn_k=impute_cfg.knn_k)
 
     imputed_data = denorm_sj(io.file_d, pd.DataFrame(imputed))
