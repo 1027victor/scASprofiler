@@ -2,7 +2,7 @@
 scASprofiler-quantify CLI
 ==============
 
-The scASprofiler-impute CLI is used to calcluate AS ratio
+The scASprofiler-impute CLI is used to calcluate AS probability
 
 you can generate a AS probability matrix by the command line like this:
 
