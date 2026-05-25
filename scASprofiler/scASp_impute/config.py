@@ -30,7 +30,8 @@ class TrainConfig:
 @dataclass(frozen=True)
 class ImputeConfig:
     sim_size: int = 200
-    knn_k: int = 10
+    # knn_k: int = 10
+    k: int = 10
 
 
 @dataclass(frozen=True)
