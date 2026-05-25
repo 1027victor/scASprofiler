@@ -172,7 +172,8 @@ def impute_cmd(
     io = _io(file_d, file_c, outdir, name)
     _, fig_h = load_and_preprocess_data(file_d)
     model_cfg = _model(fig_h, channels, latent_dim,clusters)
-    imp_cfg = ImputeConfig(sim_size=sim_size, knn_k=k)
+    # imp_cfg = ImputeConfig(sim_size=sim_size, knn_k=k)
+    imp_cfg = ImputeConfig(sim_size=sim_size, k=k)
 
     from .impute import impute
 
