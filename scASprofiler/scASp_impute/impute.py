@@ -78,7 +78,8 @@ def impute(
         mask_k = mask_mat[:, j]
         sim_k = sim_out[int(labels[j])]
         imputed[:, j] = knn_observed(
-            data_k, mask_k, sim_k, knn_k=impute_cfg.knn_k)
+            # data_k, mask_k, sim_k, knn_k=impute_cfg.knn_k)
+            data_k, mask_k, sim_k, k=impute_cfg.k)
 
     imputed_data = denorm_sj(io.file_d, pd.DataFrame(imputed))
 
