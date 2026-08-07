@@ -121,7 +121,7 @@ def train_cmd(
     if run_impute:
         from .impute import impute
 
-        imp_cfg = ImputeConfig(sim_size=sim_size, knn_k=k)
+        imp_cfg = ImputeConfig(sim_size=sim_size, k=k)
         out_path = impute(
             io=io,
             model_cfg=model_cfg,
