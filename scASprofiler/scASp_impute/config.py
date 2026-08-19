@@ -22,7 +22,7 @@ class TrainConfig:
     kt: float = 0.0
     drop_prob: float = 0.1
     patience: int = 10
-    threthold: float = 1e-2
+    # threthold: float = 1e-2
     lambda_k: float = 1e-3
     detect_anomaly: bool = False
 
