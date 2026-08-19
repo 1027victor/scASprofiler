@@ -275,12 +275,20 @@ def run_filter_pipeline_10x(
     gene_df = gene_df.drop(
         columns=[c for c in drop_cols if c in gene_df.columns], errors="ignore")
 
-    for df in gene_df:
-        if "annotated" in df.columns:
-            df["annotated"] = pd.to_numeric(
-                df["annotated"], errors="coerce").astype("Int64")
+    if "annotated" in gene_df.columns:
+        gene_df["annotated"] = pd.to_numeric(
+            gene_df["annotated"],
+            errors="coerce"
+        ).astype("Int64")
 
-    merge_df = pd.concat([gene_df], axis=0)
+    merge_df = gene_df.copy()
+
+    # for df in [gene_df]:
+    #     if "annotated" in df.columns:
+    #         df["annotated"] = pd.to_numeric(
+    #             df["annotated"], errors="coerce").astype("Int64")
+
+    # merge_df = pd.concat([gene_df], axis=0)
     must_last = [c for c in ["intron_group", "annotated",
                              "coord.intron"] if c in merge_df.columns]
     cell_cols = [c for c in merge_df.columns if c not in must_last]
