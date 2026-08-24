@@ -54,7 +54,6 @@ def _model(img_size: int, channels: int, latent_dim: int, clusters: int) -> Mode
 @click.option("--kt", type=float, default=0.0, show_default=True)
 @click.option("--drop-prob", type=float, default=0.1, show_default=True)
 @click.option("--patience", type=int, default=10, show_default=True)
-# @click.option("--threthold", type=float, default=0.01, show_default=True)
 @click.option("--channels", type=int, default=1, show_default=True)
 @click.option("--latent-dim", type=int, default=100, show_default=True)
 @click.option("--clusters", type=int, default=4, show_default=True)
